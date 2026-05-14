@@ -15,11 +15,4 @@
     });
   }, { threshold: 0.12 });
   els.forEach(el => io.observe(el));
-
-  document.querySelectorAll('.svc-option').forEach(opt => {
-    opt.addEventListener('click', (e) => {
-      e.preventDefault();
-      opt.classList.toggle('checked');
-    });
-  });
 })();

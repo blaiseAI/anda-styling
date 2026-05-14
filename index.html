@@ -7,10 +7,11 @@
   <meta name="description" content="A no-nonsense, no-trend personal styling practice for women across Calgary and Airdrie." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400&display=swap" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <!-- NAV -->
   <header class="nav">
@@ -35,6 +36,7 @@
     </details>
   </header>
 
+  <main id="main">
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-grid">
@@ -222,10 +224,6 @@
       </div>
 
       <div class="fade" data-delay="80">
-        <blockquote class="serif italic about-pull">
-          “My job isn't to give you a new self. It's to give your existing self clothes that finally <span class="accent">agree</span> with her.”
-        </blockquote>
-
         <div class="qa-grid">
           <div>
             <div class="tag accent">Q.</div>
@@ -289,15 +287,31 @@
           <div class="tag">Email</div>
           <input type="email" placeholder="sophie@email.com" />
         </label>
-        <div class="field">
-          <div class="tag">Service</div>
+        <fieldset class="field svc-options-field">
+          <legend class="tag">Service</legend>
           <div class="svc-options">
-            <label class="svc-option"><span class="check"></span>Personal Styling</label>
-            <label class="svc-option"><span class="check"></span>Closet Edit</label>
-            <label class="svc-option"><span class="check"></span>Event Styling</label>
-            <label class="svc-option"><span class="check"></span>Personal Shopping</label>
+            <label class="svc-option">
+              <input type="checkbox" name="service" value="personal-styling" />
+              <span class="check" aria-hidden="true"></span>
+              Personal Styling
+            </label>
+            <label class="svc-option">
+              <input type="checkbox" name="service" value="closet-edit" />
+              <span class="check" aria-hidden="true"></span>
+              Closet Edit
+            </label>
+            <label class="svc-option">
+              <input type="checkbox" name="service" value="event-styling" />
+              <span class="check" aria-hidden="true"></span>
+              Event Styling
+            </label>
+            <label class="svc-option">
+              <input type="checkbox" name="service" value="personal-shopping" />
+              <span class="check" aria-hidden="true"></span>
+              Personal Shopping
+            </label>
           </div>
-        </div>
+        </fieldset>
         <label class="field">
           <div class="tag">Tell Me</div>
           <textarea rows="4" placeholder="A few sentences. The woman you'd like to feel like every morning."></textarea>
@@ -307,43 +321,25 @@
       </form>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <div class="display footer-brand">Anda<span class="dot">.</span></div>
-        <div class="mono footer-est">EST. 2018 · TREATY 7</div>
+        <a class="display footer-brand" href="#top">Anda<span class="dot">.</span></a>
+        <div class="footer-est">Calgary &amp; Airdrie, since 2018</div>
       </div>
-      <div>
-        <div class="tag accent">Services</div>
-        <div class="footer-col">
-          <div>Personal Styling</div><div>Closet Edit</div><div>Event</div><div>Shopping</div>
-        </div>
-      </div>
-      <div>
-        <div class="tag accent">Studio</div>
-        <div class="footer-col">
-          <div>Calgary</div><div>Airdrie</div><div>Hours</div><div>Gift Cards</div>
-        </div>
-      </div>
-      <div>
-        <div class="tag accent">Read</div>
-        <div class="footer-col">
-          <div>Journal</div><div>Press</div><div>FAQs</div><div>Lookbook</div>
-        </div>
-      </div>
-      <div>
-        <div class="tag accent">Follow</div>
-        <div class="footer-col">
-          <div>Instagram</div><div>Pinterest</div><div>Substack</div><div>Newsletter</div>
-        </div>
-      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#cta">Contact</a>
+      </nav>
     </div>
     <div class="display footer-mega" aria-hidden="true">Anda Styling</div>
     <div class="footer-bottom">
-      <div class="mono">© 2026 ANDA STYLING — ALL RIGHTS RESERVED.</div>
-      <div class="mono">SET IN BRICOLAGE & INSTRUMENT</div>
+      <div class="mono">© 2026 Anda Styling</div>
+      <div class="mono">Calgary, AB · Treaty 7 Territory</div>
     </div>
   </footer>
 

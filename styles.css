@@ -25,17 +25,33 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* SKIP LINK */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 12px;
+  z-index: 100;
+  padding: 12px 18px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: top .2s;
+}
+.skip-link:focus-visible {
+  top: 12px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 /* TYPE UTILITIES */
 .display {
   font-family: 'Bricolage Grotesque', system-ui, sans-serif;
   font-weight: 700;
   letter-spacing: -.025em;
 }
-.serif {
-  font-family: 'Instrument Serif', serif;
-  font-weight: 400;
-}
-.italic { font-style: italic; }
 .mono {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-weight: 400;
@@ -359,14 +375,6 @@ body {
 }
 .small-cap { font-size: 10px; letter-spacing: 2px; }
 .bio-value { font-size: 15px; }
-.about-pull {
-  font-size: 32px;
-  line-height: 1.3;
-  margin: 0 0 32px;
-  color: var(--ink);
-  border-left: 3px solid var(--accent);
-  padding-left: 24px;
-}
 .qa-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -448,12 +456,19 @@ body {
 }
 .field input:focus,
 .field textarea:focus { border-color: var(--ink); }
+.svc-options-field {
+  border: none;
+  padding: 0;
+  margin: 0 0 14px;
+}
+.svc-options-field legend { margin-bottom: 8px; padding: 0; }
 .svc-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 .svc-option {
+  position: relative;
   padding: 12px 14px;
   border: 1px solid var(--line);
   font-size: 13px;
@@ -461,18 +476,32 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  min-height: 44px;
   transition: border-color .2s, background .2s;
 }
 .svc-option:hover { border-color: var(--ink); }
+.svc-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  pointer-events: none;
+}
+.svc-option:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--ink);
+}
 .check {
   width: 14px;
   height: 14px;
   border: 1px solid var(--ink);
   display: inline-block;
   flex-shrink: 0;
+  transition: background .2s;
 }
-.svc-option:has(input:checked) .check,
-.svc-option.checked .check { background: var(--ink); }
+.svc-option:has(input:checked) .check { background: var(--ink); }
 .form-foot {
   font-size: 10px;
   letter-spacing: 1.5px;
@@ -490,26 +519,39 @@ body {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr auto;
   gap: 40px;
   margin-bottom: 48px;
+  align-items: end;
 }
-.footer-brand { font-size: 56px; line-height: 1; }
+.footer-brand {
+  font-size: 56px;
+  line-height: 1;
+  color: var(--paper);
+  text-decoration: none;
+  display: inline-block;
+}
+.footer-brand:hover .dot,
+.footer-brand:focus-visible .dot { color: var(--paper); }
 .footer-est {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--paper-dim);
-  margin-top: 14px;
-}
-.footer-grid .tag { margin-bottom: 14px; display: block; }
-.footer-col { display: grid; gap: 8px; }
-.footer-col div {
   font-size: 14px;
   color: var(--paper-mute);
-  cursor: pointer;
+  margin-top: 12px;
+}
+.footer-nav {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.footer-nav a {
+  font-size: 15px;
+  color: var(--paper-mute);
+  text-decoration: none;
   transition: color .2s;
 }
-.footer-col div:hover { color: var(--paper); }
+.footer-nav a:hover,
+.footer-nav a:focus-visible { color: var(--paper); }
 .footer-mega {
   font-size: 160px;
   line-height: .9;
@@ -528,8 +570,7 @@ body {
   flex-wrap: wrap;
 }
 .footer-bottom .mono {
-  font-size: 10px;
-  letter-spacing: 1.5px;
+  font-size: 11px;
   color: var(--paper-dim);
 }
 
@@ -642,8 +683,13 @@ body {
   .bio-grid, .qa-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
 
   .footer { padding: 40px 20px 24px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+  }
   .footer-brand { font-size: 40px; }
+  .footer-nav { justify-content: flex-start; gap: 20px; }
   .footer-mega { font-size: 56px; }
   .footer-bottom { flex-direction: column; gap: 8px; }
 
