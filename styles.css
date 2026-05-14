@@ -227,22 +227,6 @@ body {
 .plate-portrait { aspect-ratio: 3 / 4; }
 
 /* PRESS TICKER */
-.press {
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.press-name {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
 /* SERVICES */
 .services { padding: 100px 40px; }
 .section-head {
@@ -252,7 +236,6 @@ body {
   margin-bottom: 56px;
   align-items: end;
 }
-.eyebrow { margin-bottom: 18px; display: block; }
 .section-title {
   font-size: 96px;
   line-height: .92;
@@ -338,11 +321,11 @@ body {
   margin: 0;
 }
 .process-note {
-  font-size: 12px;
-  color: var(--paper-dim);
-  letter-spacing: 2px;
-  max-width: 280px;
-  line-height: 1.7;
+  font-size: 15px;
+  color: var(--paper-mute);
+  max-width: 320px;
+  line-height: 1.55;
+  margin: 0;
 }
 .process-grid {
   display: grid;
@@ -413,81 +396,6 @@ body {
 }
 .qa-grid p { margin: 0 0 16px; }
 .qa-grid .tag { margin-bottom: 8px; }
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 56px;
-  padding-top: 32px;
-  border-top: 1px solid var(--line);
-}
-.stat-big {
-  font-size: 56px;
-  line-height: 1;
-  color: var(--accent);
-  letter-spacing: -.03em;
-}
-.stat-label {
-  font-size: 12px;
-  color: var(--ink-soft);
-  margin-top: 8px;
-  line-height: 1.5;
-}
-
-/* PULL QUOTE */
-.pullquote {
-  padding: 80px 40px;
-  background: var(--accent);
-  color: var(--ink);
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
-}
-.pq-text {
-  font-size: 112px;
-  line-height: .92;
-  letter-spacing: -.035em;
-  max-width: 1100px;
-}
-.pq-attr {
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-top: 32px;
-  opacity: .7;
-}
-
-/* TESTIMONIALS */
-.testimonials { padding: 100px 40px; }
-.tst-title {
-  font-size: 88px;
-  line-height: .94;
-  margin: 0 0 64px;
-  letter-spacing: -.03em;
-}
-.tst-row {
-  display: grid;
-  grid-template-columns: 60px 1.8fr 1fr 1fr 160px;
-  gap: 24px;
-  padding: 30px 0;
-  border-bottom: 1px solid var(--line);
-  align-items: center;
-}
-.tst-quote-mark { font-size: 36px; color: var(--accent); }
-.tst-quote { font-size: 24px; line-height: 1.35; }
-.tst-name { font-size: 15px; font-weight: 600; }
-.tst-loc { font-size: 12px; color: var(--ink-soft); }
-.tst-svc {
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.tst-stars {
-  font-size: 11px;
-  color: var(--accent);
-  text-align: right;
-  letter-spacing: 1px;
-}
-
 /* CTA */
 .cta {
   padding: 100px 40px;
@@ -649,8 +557,7 @@ body {
   .hero { padding: 56px 32px 80px; }
   .hero-grid { gap: 40px; }
   .section-title, .about-title, .cta-title { font-size: 72px; }
-  .process-title, .tst-title { font-size: 64px; }
-  .pq-text { font-size: 80px; }
+  .process-title { font-size: 64px; }
   .footer-mega { font-size: 110px; }
   .svc-row { grid-template-columns: 80px 1fr 1fr 1fr 100px 40px; }
   .svc-num { font-size: 44px; }
@@ -732,9 +639,7 @@ body {
   .hero-lede { font-size: 17px; }
   .hero-location { padding-top: 20px; }
 
-  .press { padding: 16px 20px; gap: 14px; }
-
-  .services, .process, .about, .testimonials, .cta { padding: 60px 20px; }
+  .services, .process, .about, .cta { padding: 60px 20px; }
   .section-head, .about-grid, .cta-grid { grid-template-columns: 1fr; gap: 24px; }
   .section-title, .about-title, .cta-title { font-size: 52px; }
   .process-head { flex-direction: column; align-items: start; }
@@ -753,16 +658,7 @@ body {
   .svc-price { text-align: left; }
   .svc-arrow { display: none; }
 
-  .pullquote { padding: 60px 20px; }
-  .pq-text { font-size: 48px; }
-
-  .tst-title { font-size: 48px; }
-  .tst-row { grid-template-columns: 40px 1fr; gap: 12px; padding: 20px 0; }
-  .tst-quote { font-size: 18px; }
-  .tst-row > div:nth-child(n+3) { grid-column: 1 / -1; }
-  .tst-stars { text-align: left; }
-
-  .bio-grid, .qa-grid, .stats-row { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .bio-grid, .qa-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
 
   .footer { padding: 40px 20px 24px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
