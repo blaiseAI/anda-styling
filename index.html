@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Anda Styling — Modern Editorial</title>
+  <title>Anda Styling — Personal styling in Calgary &amp; Airdrie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="A no-nonsense, no-trend personal styling practice for women across Calgary and Airdrie." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,86 +12,58 @@
 </head>
 <body>
 
-  <!-- TOP STRIP -->
-  <div class="top-strip">
-    <div class="mono">VOL.04 / ISSUE 12 — SPRING 2026</div>
-    <div class="mono">NOW BOOKING · 03 SLOTS OPEN</div>
-    <div class="mono">CALGARY · AIRDRIE · YYC</div>
-  </div>
-
   <!-- NAV -->
   <header class="nav">
-    <nav class="nav-links">
-      <a class="link active" href="#services">Services</a>
+    <a class="brand display" href="#top" aria-label="Anda Styling, home">Anda<span class="dot">.</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="link" href="#services">Services</a>
       <a class="link" href="#journal">Journal</a>
       <a class="link" href="#about">About</a>
-      <a class="link" href="#stockists">Stockists</a>
+      <a class="link" href="#cta">Contact</a>
     </nav>
-    <div class="brand display">Anda<span class="dot">.</span></div>
-    <div class="nav-right">
-      <div class="mono lang">EN / FR</div>
-      <button class="btn solid small">Book <span class="arr">→</span></button>
-    </div>
+    <details class="nav-disclosure" aria-label="Open menu">
+      <summary aria-label="Menu">
+        <span class="nav-bar"></span>
+        <span class="nav-bar"></span>
+      </summary>
+      <nav class="nav-links-mobile" aria-label="Primary, mobile">
+        <a class="link" href="#services">Services</a>
+        <a class="link" href="#journal">Journal</a>
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#cta">Contact</a>
+      </nav>
+    </details>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="hero-grid">
-      <div class="hero-left fade">
-        <div>
-          <div class="tag accent">★ Cover Story — N° 12</div>
-          <h1 class="display hero-title">
-            Dress<br />
-            <span class="serif italic accent">like you</span><br />
-            mean it.
-          </h1>
+      <div class="hero-left">
+        <h1 class="display hero-title fade">
+          A wardrobe that requires less of you, not more.
+        </h1>
+        <p class="hero-lede fade" data-delay="60">
+          A personal styling practice in Calgary and Airdrie, in your closet first, on a shop floor second. Built for women who would rather edit than accumulate.
+        </p>
+        <div class="hero-cta fade" data-delay="120">
+          <a class="btn solid" href="#cta">Book a Session <span class="arr" aria-hidden="true">→</span></a>
         </div>
-        <div class="hero-bottom">
-          <p class="hero-lede">
-            A no-nonsense, no-trend personal styling practice for women across Calgary and Airdrie. Built on the radical idea that <em>clothes should agree with you.</em>
-          </p>
-          <div class="hero-ctas">
-            <button class="btn solid">Book a Session <span class="arr">→</span></button>
-            <button class="btn ghost">Read Journal</button>
-          </div>
-          <div class="hero-stats">
-            <div>
-              <div class="display stat-n">240+</div>
-              <div class="tag soft">Women Styled</div>
-            </div>
-            <div>
-              <div class="display stat-n">★ 4.9</div>
-              <div class="tag soft">Avg. Rating</div>
-            </div>
-            <div>
-              <div class="display stat-n">09</div>
-              <div class="tag soft">Years</div>
-            </div>
-          </div>
-        </div>
+        <p class="hero-location fade" data-delay="180">Calgary + Airdrie, since 2018.</p>
       </div>
 
-      <div class="hero-right fade" data-delay="100">
-        <div class="plate plate-tall">
-          <div class="plate-bg"></div>
-          <div class="plate-label">01 / Spring Editorial</div>
-          <div class="plate-meta">[image]</div>
-          <div class="plate-caption">
-            <div class="mono caption-eyebrow">FEATURE — 12 MIN READ</div>
-            <div class="serif italic caption-title">On dressing softly without disappearing.</div>
-          </div>
-        </div>
-        <div class="plate plate-square">
-          <div class="plate-bg"></div>
-          <div class="plate-label">02 / Closet</div>
-          <div class="plate-meta">[image]</div>
-        </div>
-        <div class="plate-quote">
-          <div class="mono">03 / FROM THE STUDIO</div>
-          <div class="display quote-text">“She listens before she shops.”</div>
-          <div class="mono">— AVENUE MAG</div>
-        </div>
-      </div>
+      <figure class="hero-photo fade" data-delay="80">
+        <img
+          src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&amp;fit=crop&amp;w=1200&amp;h=1600&amp;q=80"
+          srcset="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&amp;fit=crop&amp;w=800&amp;h=1066&amp;q=80 800w,
+                  https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&amp;fit=crop&amp;w=1200&amp;h=1600&amp;q=80 1200w,
+                  https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&amp;fit=crop&amp;w=1600&amp;h=2133&amp;q=80 1600w"
+          sizes="(max-width: 860px) 100vw, 50vw"
+          width="1200"
+          height="1600"
+          alt="A folded garment hung on a wooden clothes horse in warm natural light, cream and brown palette."
+          fetchpriority="high"
+        />
+      </figure>
     </div>
   </section>
 
