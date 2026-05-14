@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-14T01:39:47Z",
+  "title": "Design System: Anda Styling",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Studio Paper",
+        "canonical": "oklch(94% 0.012 78)",
+        "tonalRamp": ["#1a1614", "#2d2722", "#4a4138", "#6b645b", "#8a8278", "#b8b0a4", "#d8d2c7", "#f4f1ea"]
+      },
+      "paper-alt": {
+        "role": "neutral",
+        "displayName": "Drafting Cream",
+        "canonical": "oklch(91% 0.014 78)",
+        "tonalRamp": ["#181311", "#2a241f", "#463e36", "#6b6259", "#8a8177", "#b6ada1", "#d2ccc1", "#ece7dc"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Anda Ink",
+        "canonical": "oklch(15% 0.012 50)",
+        "tonalRamp": ["#15110d", "#221b15", "#332921", "#4a3d31", "#6b5b4a", "#9a8973", "#c4b9a4", "#e8dfd0"]
+      },
+      "ink-strong": {
+        "role": "neutral",
+        "displayName": "Studio Ink",
+        "canonical": "oklch(17% 0.012 45)",
+        "tonalRamp": ["#1a1614", "#26201d", "#38302a", "#4e433b", "#6e6055", "#9a8a7c", "#c3b8aa", "#e8dfd4"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ash Ink",
+        "canonical": "oklch(48% 0.008 60)",
+        "tonalRamp": ["#15110d", "#26201b", "#3d342c", "#544940", "#6b645b", "#8c8479", "#b3aba0", "#dcd6cb"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Anda Rust",
+        "canonical": "oklch(64% 0.21 35)",
+        "tonalRamp": ["#3a0f04", "#5a1808", "#8a2410", "#b53217", "#dc3d1c", "#ff4a1c", "#ff7754", "#ffb5a0"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only. One per page. Bricolage Grotesque 700 at clamp(2.5rem, 9vw, 8.25rem)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles. Always paired with a short kicker."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service names, process names, footer brand."
+      },
+      "serif": {
+        "displayName": "Serif Drop",
+        "purpose": "Instrument Serif italic, used once per section maximum on a single word or phrase inside a display headline. A pause inside the type, not decoration."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Lede paragraphs, testimonial copy. Capped at 65-75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "JetBrains Mono uppercase tracked. Currently overused across the page; reservation rule pending enforcement."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease-out-soft", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Fade-up entrance for sections via IntersectionObserver. 800ms duration." },
+      { "name": "state-fast", "value": "0.25s", "purpose": "Button background and ghost-fill hover transitions." },
+      { "name": "state-medium", "value": "0.3s", "purpose": "Service-row tonal hover (paper to paper-alt)." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1100px" },
+      { "name": "mobile", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid ink button with rust hover. The default CTA on every section.",
+      "html": "<button class=\"ds-btn-primary\">Book a Session <span>&rarr;</span></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: #15110d; color: #f4f1ea; border: none; border-radius: 0; cursor: pointer; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; font-size: 15px; letter-spacing: -0.01em; transition: background 0.25s; } .ds-btn-primary:hover { background: #ff4a1c; } .ds-btn-primary:focus-visible { outline: 2px solid #ff4a1c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Outlined ink button. Secondary CTA paired with primary.",
+      "html": "<button class=\"ds-btn-ghost\">Read Journal</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: transparent; color: #15110d; border: 1px solid #15110d; border-radius: 0; cursor: pointer; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 600; font-size: 15px; letter-spacing: -0.01em; transition: background 0.25s, color 0.25s; } .ds-btn-ghost:hover { background: #15110d; color: #f4f1ea; } .ds-btn-ghost:focus-visible { outline: 2px solid #ff4a1c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Inquiry Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Field on Drafting Cream with a 1-px line border. Sharp corners; focus darkens the border to ink. No glow.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">First Name</span><input class=\"ds-input\" type=\"text\" placeholder=\"Sophie\" /></label>",
+      "css": ".ds-field { display: block; } .ds-field-label { display: block; margin-bottom: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #15110d; } .ds-input { width: 100%; padding: 12px 14px; background: #ece7dc; color: #15110d; border: 1px solid rgba(21,17,13,0.14); border-radius: 0; font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; } .ds-input:focus { border-color: #15110d; }"
+    },
+    {
+      "name": "Service Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Static informational tag listing what a service includes. Mono, uppercase, line border, no state.",
+      "html": "<span class=\"ds-chip\">Mood-mapping</span>",
+      "css": ".ds-chip { display: inline-block; padding: 4px 8px; background: transparent; color: #15110d; border: 1px solid rgba(21,17,13,0.14); border-radius: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Six-column grid row for the services index: rust numeral, name, description, inclusion chips, price block, ink circle arrow. Hover lifts to Drafting Cream tonal background.",
+      "html": "<article class=\"ds-svc-row\"><div class=\"ds-svc-num\">01</div><div class=\"ds-svc-name\">Personal Styling</div><div class=\"ds-svc-desc\">A wardrobe tailored to your life, your body and your week.</div><div class=\"ds-svc-tags\"><span class=\"ds-chip\">Mood-mapping</span><span class=\"ds-chip\">Outfit blueprint</span></div><div class=\"ds-svc-price\"><div class=\"ds-svc-price-label\">FROM</div><div class=\"ds-svc-price-n\">$250</div><div class=\"ds-svc-price-label\">4 hrs</div></div><div class=\"ds-svc-arrow\"><span>&rarr;</span></div></article>",
+      "css": ".ds-svc-row { display: grid; grid-template-columns: 120px 1.3fr 1.5fr 1fr 120px 40px; gap: 24px; align-items: center; padding: 32px 0; border-bottom: 1px solid rgba(21,17,13,0.14); transition: background 0.3s; font-family: 'Bricolage Grotesque', system-ui, sans-serif; } .ds-svc-row:hover { background: #ece7dc; } .ds-svc-num { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 56px; line-height: 1; color: #ff4a1c; letter-spacing: -0.04em; } .ds-svc-name { font-weight: 600; font-size: 32px; line-height: 1.05; color: #15110d; } .ds-svc-desc { font-size: 15px; color: #6b645b; line-height: 1.55; } .ds-svc-tags { display: flex; flex-wrap: wrap; gap: 6px; } .ds-chip { display: inline-block; padding: 4px 8px; border: 1px solid rgba(21,17,13,0.14); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #15110d; } .ds-svc-price { text-align: right; } .ds-svc-price-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: #6b645b; text-transform: uppercase; } .ds-svc-price-n { font-weight: 700; font-size: 28px; color: #15110d; letter-spacing: -0.025em; } .ds-svc-arrow span { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #15110d; color: #f4f1ea; font-size: 18px; }"
+    },
+    {
+      "name": "Inquiry Form Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "The only true card in the system. Studio Paper field with a 1-px ink hard border on a Drafting Cream surround. Sharp corners, no shadow.",
+      "html": "<div class=\"ds-form-card\"><div class=\"ds-form-eyebrow\">FORM 01 &mdash; INQUIRY</div><label class=\"ds-field\"><span class=\"ds-field-label\">Email</span><input class=\"ds-input\" type=\"email\" placeholder=\"sophie@email.com\" /></label></div>",
+      "css": ".ds-form-card { background: #f4f1ea; padding: 36px; border: 1px solid #15110d; border-radius: 0; font-family: 'Bricolage Grotesque', sans-serif; } .ds-form-eyebrow { margin-bottom: 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #15110d; } .ds-field { display: block; } .ds-field-label { display: block; margin-bottom: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #15110d; } .ds-input { width: 100%; padding: 12px 14px; background: #ece7dc; border: 1px solid rgba(21,17,13,0.14); border-radius: 0; font-family: inherit; font-size: 14px; color: #15110d; outline: none; transition: border-color 0.2s; } .ds-input:focus { border-color: #15110d; }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The Anda wordmark: Bricolage 700 at 44 px display with a single rust-orange dot as the period. The dot is the only place Anda Rust appears in the nav.",
+      "html": "<div class=\"ds-wordmark\">Anda<span>.</span></div>",
+      "css": ".ds-wordmark { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 44px; line-height: 1; letter-spacing: -0.06em; color: #15110d; } .ds-wordmark span { color: #ff4a1c; }"
+    },
+    {
+      "name": "Pull-Quote Field",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Full-bleed Anda Rust drench with display headline and mono attribution. One per page maximum. The single Drenched colour-strategy moment on the surface.",
+      "html": "<section class=\"ds-pq\"><div class=\"ds-pq-text\">Style isn&rsquo;t a <em>transformation</em>.<br />It&rsquo;s a <em>translation</em>.</div><div class=\"ds-pq-attr\">&mdash; ANDA, IN CONVERSATION WITH AVENUE, FEB 2026</div></section>",
+      "css": ".ds-pq { padding: 80px 40px; background: #ff4a1c; color: #15110d; border-top: 1px solid #15110d; border-bottom: 1px solid #15110d; font-family: 'Bricolage Grotesque', sans-serif; } .ds-pq-text { font-weight: 700; font-size: clamp(2.5rem, 8vw, 7rem); line-height: 0.92; letter-spacing: -0.035em; max-width: 1100px; } .ds-pq-text em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; } .ds-pq-attr { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; margin-top: 32px; opacity: 0.7; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Paper Atelier",
+    "overview": "A page that should read like a sheet of warm paper on a working table: ink-dark type, one rust-orange thread, a few hand-cut images, generous quiet between blocks. Anda's practice is in-person and tactile; the site is the first proof that the person behind it can be trusted with a closet. The aesthetic philosophy is calm before performance. A senior professional visiting on her phone after the kids are asleep should not feel sold to.",
+    "keyCharacteristics": [
+      "Off-white paper background carries the page; pure white is forbidden.",
+      "Ink near-black for type; pure #000 is forbidden.",
+      "One accent (rust orange) used at display scale only.",
+      "Sharp corners by default. No rounded cards, no soft shapes.",
+      "Flat surfaces. No shadows. Depth via 1-px rule lines.",
+      "Asymmetric grids; left-aligned compositions over centered stacks.",
+      "Type does the work. Imagery is structural, never decorative filler."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Anda Rust appears at display scale only (>=18px text, or as a block field). Small accent text on paper drops below WCAG AA contrast. If a small label must be the accent, the surface beneath it inverts to ink.", "section": "colors" },
+      { "name": "The Warmth Rule", "body": "No #000 and no #FFF. Every neutral is tinted warm. The page should never read clinical.", "section": "colors" },
+      { "name": "The Single Thread Rule", "body": "Anda Rust is a thread, not a wash. If it appears more than three times in a viewport, the system is wrong; review and remove.", "section": "colors" },
+      { "name": "The One Italic Rule", "body": "Instrument Serif italic appears once per section maximum, on a single word or phrase inside a display headline. Never as body copy, never on captions. It is a pause inside the type, not a flavour added on top.", "section": "typography" },
+      { "name": "The Mono Reservation Rule", "body": "JetBrains Mono should be reserved for genuinely data-shaped content or for one deliberate brand-voice surface (a single kicker style at most). Anything else falls into the mono-as-costume anti-pattern. Current implementation violates this rule across the page.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "No shadows, no glassmorphism, no blurred backdrops. If something needs to feel 'raised', invert its background tone instead.", "section": "elevation" },
+      { "name": "The Rule-Line Vocabulary", "body": "Two weights of horizontal line are allowed: 1-px ink (hard, between sections, marks chapter breaks) and 1-px line-token (soft, inside lists, marks row breaks). No other line weights, no double rules, no decorative dividers.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Studio Paper (#F4F1EA) for the dominant page surface. 60-70% of any viewport.",
+      "Do reserve Anda Rust (#FF4A1C) for display-scale type and full colour fields. Never small label colour on paper.",
+      "Do keep buttons sharp (radius 0). The system has no rounded affordances except the single .svc-arrow 40-px ink circle.",
+      "Do use 1-px rule lines for separation. Two weights only: hard ink, soft line-token.",
+      "Do invert tonally for elevation: shift from Studio Paper to Drafting Cream rather than reach for a shadow.",
+      "Do keep body copy at 65-75ch (max-width 440-460px enforces this on ledes).",
+      "Do write alt text in Anda's voice when imagery lands, per PRODUCT.md.",
+      "Do respect prefers-reduced-motion on every fade-in or transition."
+    ],
+    "donts": [
+      "Don't use magazine-cover editorial templates. No VOL.04 / ISSUE 12 mastheads, no star Cover Story N-degree kickers, no section-symbol-01 numbering. The current implementation does this; remove in the next shape pass.",
+      "Don't scaffold every section with a mono uppercase tracked kicker. PRODUCT.md anti-reference; brand.md ban. One kicker style at most.",
+      "Don't use Instrument Serif italic as page-grammar. One word per section, max.",
+      "Don't use Anda Rust on body text or 11-px labels. Contrast fails WCAG AA. Promote to display, or restate in ink.",
+      "Don't use pure #000 or #FFF. Every neutral is tinted warm toward the paper hue.",
+      "Don't introduce box-shadows. Flat-by-default. If depth is needed, change the surface colour.",
+      "Don't add rounded corners. Sharp is the system. Pill buttons, soft cards, rounded inputs are banned.",
+      "Don't ship colored gradient blocks where photographs should sit. PRODUCT.md / brand.md ban for fashion briefs.",
+      "Don't publish testimonials, press citations, or metrics that are not real. Service is the product. Empty space beats fabricated proof.",
+      "Don't leave mobile nav as a hidden link row with no replacement.",
+      "Don't default to centered hero stacks with icon-title-subtitle cards. The system is left-aligned and asymmetric.",
+      "Don't add a fifth or sixth font family. The system is three: Bricolage, Instrument Serif (italic only), JetBrains Mono. The mono is on probation."
+    ]
+  }
+}
